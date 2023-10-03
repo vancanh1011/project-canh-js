@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "module": "ES6",
+      "jsx": "react-jsx",
+      "checkJs": true,
+      "baseUrl": "./",
+      "paths": {
+        "src/*": ["./src/*"]
+      },
+      "moduleResolution": "node",
+      "allowJs": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "strict": false,
+  
+      "allowSyntheticDefaultImports": true
+    },
+    "exclude": ["node_modules", "**/node_modules/*"]
+  }
+  

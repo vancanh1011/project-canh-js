@@ -1,0 +1,137 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "fullName": "Thien Pham",
+      "email": "thien.pham@fe-dev.com",
+      "address": "Danang",
+      "role": "Frontend Developer",
+      "avatarSrc": "https://media4.giphy.com/media/3lvqNXheb679S/giphy.gif",
+      "isOnline": true
+    },
+    {
+      "id": "2",
+      "fullName": "Lian Fuen",
+      "email": "tian.toktok@yahoo.com",
+      "address": "Hochiminh",
+      "role": "Quality Assurance",
+      "avatarSrc": "https://duhocsunny.edu.vn/wp-content/uploads/2023/02/Gai-xinh-Han-Quoc-Ji-Seong.jpg",
+      "isOnline": true
+    },
+    {
+      "id": "3",
+      "fullName": "Hyori Matamatshu",
+      "email": "thien.pham@dev.com",
+      "address": "Japan",
+      "role": "Backend Developer",
+      "avatarSrc": "https://tuiriviu.com/wp-content/uploads/2023/08/MIKAMI-YUA-ROI-NUOC-MAT-TRONG-NGAY-GIA-TU-SU.jpg",
+      "isOnline": false
+    },
+    {
+      "id": "4",
+      "fullName": "Sapanachap Khunme",
+      "email": "thien.pham@dev.com",
+      "address": "Thailand",
+      "role": "Full-stack Developer",
+      "avatarSrc": "https://img.freepik.com/premium-photo/thai-girl-traditional-thai-costume-identity-culture-thailand_41204-781.jpg?w=2000",
+      "isOnline": false
+    },
+    {
+      "id": "5",
+      "fullName": "Naphat Nine",
+      "email": "napaht.9@yahoo.com",
+      "address": "Thailand",
+      "role": "Quality Assurance",
+      "avatarSrc": "https://image-us.eva.vn/upload/3-2020/images/2020-07-28/nine-naphat-hoang-tu-lai-noi-khap-chau-a-la-con-trai-ngoan-cua-ba-me-a-hau-5-1595952088-822-width600height459.jpg",
+      "isOnline": true
+    },
+    {
+      "id": "6",
+      "fullName": "Min ZhaoLong",
+      "email": "min.long@dev.com",
+      "address": "China",
+      "role": "Quality Assurance",
+      "avatarSrc": "https://i.bloganchoi.com/bloganchoi.com/wp-content/uploads/2021/09/hinh-anh-baifern-pimchanok-696x870.jpg?fit=700%2C20000&quality=95&ssl=1",
+      "isOnline": false
+    },
+    {
+      "id": "7",
+      "fullName": "Hugo Sebastien",
+      "email": "sebas.sasbe@yahoo.com",
+      "address": "France",
+      "role": "Backend Developer",
+      "avatarSrc": "https://media.vov.vn/sites/default/files/styles/large/public/2023-08/b_0.jpg",
+      "isOnline": false
+    },
+    {
+      "id": "8",
+      "fullName": "Taylor Siza",
+      "email": "taylor.taylor@dev.com",
+      "address": "Australia",
+      "role": "Quality Assurance",
+      "avatarSrc": "https://hips.hearstapps.com/hmg-prod/images/taylor-swift-attends-the-2022-mtv-vmas-at-prudential-center-news-photo-1666112261.jpg",
+      "isOnline": true
+    },
+    {
+      "id": "9",
+      "fullName": "Myra Tran",
+      "email": "sau.ly@yahoo.com",
+      "address": "Quangnam",
+      "role": "Frontend Developer",
+      "avatarSrc": "https://images2.thanhnien.vn/528068263637045248/2023/3/16/edit-myra-tran-9-16789572494021490104536.png",
+      "isOnline": true
+    },
+    {
+      "id": "10",
+      "fullName": "Duke Fuke",
+      "email": "duke.fuke@yahoo.com",
+      "address": "Quangnam",
+      "role": "Frontend Developer",
+      "avatarSrc": "https://photo-zmp3.zmdcdn.me/avatars/4/b/7/b/4b7ba1fea4308c8822f00148bc4275c4.jpg",
+      "isOnline": true
+    },
+    {
+      "id": "11",
+      "fullName": "Elon Mussk",
+      "email": "sau.ly@yahoo.com",
+      "address": "USA",
+      "role": "Product Owner",
+      "avatarSrc": "https://cdn-s-www.leprogres.fr/images/79ACF7C3-B0E5-4453-824F-7E86DE90230A/NW_raw/elon-musk-en-aout-2021-photo-patrick-pleul-dpa-picture-alliance-via-afp-1639434176.jpg",
+      "isOnline": false
+    },
+    {
+      "id": "12",
+      "fullName": "Bill Gate",
+      "email": "bill.gate@yahoo.com",
+      "address": "USA",
+      "role": "Product Manager",
+      "avatarSrc": "https://cdnmedia.baotintuc.vn/Upload/hzH5sl29EIFan4PIwbCQ/files/2020/03/bill-gates-micosoft-140320.jpg",
+      "isOnline": true
+    },
+    {
+      "id": "13",
+      "fullName": "Tok Tian",
+      "email": "tian.toktok@yahoo.com",
+      "address": "HoChiMinh City",
+      "role": "Quality Assurance",
+      "avatarSrc": "https://image.tienphong.vn/600x315/Uploaded/2023/ofh-ngutgazs/2021_12_27/tt-ava-361.png",
+      "isOnline": true
+    },
+    {
+      "id": "IT-6203654344",
+      "fullName": "Jaejoong",
+      "email": "be@gmail.com",
+      "address": "Korea",
+      "role": "Backend Developer",
+      "avatarSrc": "https://kenh14cdn.com/thumb_w/660/2020/4/1/631790fe9fbd76e32fac-1585726645703180166744.jpg"
+    },
+    {
+      "id": "IT-6340022719",
+      "fullName": "Konqeur",
+      "email": "kon@yahoooo.com",
+      "address": "Kanga",
+      "role": "Full-stack Developer",
+      "avatarSrc": "https://static.tuoitre.vn/tto/i/s626/2016/07/05/wall-e-cubecolors-1467709252.jpg"
+    }
+  ]
+}

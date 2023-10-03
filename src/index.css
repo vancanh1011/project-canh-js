@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;500;600;700&display=swap");
+@import "react-toastify/dist/ReactToastify.min.css";
+@import "./global.css";
+
+:root {
+  --font-family: "Shantell Sans", Inter, system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: #82ccdd;
+  color: #34495e;
+  padding: 30px;
+}
