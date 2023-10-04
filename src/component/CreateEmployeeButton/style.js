@@ -8,6 +8,7 @@ const CreateEmployeeButtonStyled = styled.button`
     border: none;
     outline: none;
     padding: 5px 15px;
+    text-align: center;
     &:hover {
         cursor: pointer;
         transform: scale(1.1)

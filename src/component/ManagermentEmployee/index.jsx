@@ -31,13 +31,13 @@ const ManagermentEmployees = () => {
             <Title content = "Data Center of employee" customStyles = {customStyles}/>
 
             <div className="action-bar">
-                <CreateEmployeeButton btnText="+ New Employee "/>    
+                <CreateEmployeeButton btnText="+ New Employee " setEmployeeData= {setEmployeeData}/>    
             </div>
 
             <EmployeesList employeeData= {employeeData} setEmployeeData= {setEmployeeData}/>
     
         </ManagermentEmployeesStyled>
-    );
+    )
 }
 export default ManagermentEmployees;
 

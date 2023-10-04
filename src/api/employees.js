@@ -9,7 +9,12 @@ export const getEmployeesList = async () => {
 
 
 
-//const createNewEmployee = async ()=>{};
+export const createNewEmployee = async (data)=>{
+    const response = await request.post(ENTITY,{...data});
+    const updatedResponse = await getEmployeesList();
+    response.data = updatedResponse;
+    return response;
+};
 
 
 export const deleteEmployee = async (employeeId)=>{
