@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const CreateEmployeeModalStyled = styled.div`
+const EditEmployeeStyled = styled.div`
+
     background: white;
     position: absolute;     
     top: 50%;
@@ -9,9 +10,8 @@ export const CreateEmployeeModalStyled = styled.div`
     border-radius: 12px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
 
-    .form {
+  .form {
         display: flex;
         flex-direction: column;
         margin: 20px;
@@ -33,7 +33,7 @@ export const CreateEmployeeModalStyled = styled.div`
 
         }
     }
-    .action-buttons {
+    .action-button{
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -66,17 +66,5 @@ export const CreateEmployeeModalStyled = styled.div`
             
         }
     }
-    .error-field {
-        border: 2px solid red !important;
-        &::placeholder{
-            color: red;
-        }
-        }
-
 `
-export const ErorrStyled = styled.p`
-color: red;
-`
-
-
-
+export default EditEmployeeStyled;

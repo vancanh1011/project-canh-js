@@ -18,7 +18,7 @@ export const createNewEmployee = async (data)=>{
 
 
 export const deleteEmployee = async (employeeId)=>{
-    console.log("delete employee", employeeId);
+
     const response = await request.delete(`${ ENTITY }/${employeeId} ` );
     const updatedResponse = await getEmployeesList();
     console.log(updatedResponse);
@@ -28,4 +28,8 @@ export const deleteEmployee = async (employeeId)=>{
 };
 
 
-//const updateEmployee = async ()=>{};
+    //export const updateEmployee = async (employeeId)=>{ 
+    //console.log( "update employee", employeeId)
+    //const response = await request.get(ENTITY);
+    //return response.data
+//};
