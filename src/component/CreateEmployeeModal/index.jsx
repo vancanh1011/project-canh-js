@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import Title from "../title";
-import {CreateEmployeeModalStyled, ErorrStyled } from "./style";
+import { CreateEmployeeModalStyled, ErorrStyled } from "./style";
 import { createNewEmployee } from "src/api/employees";
 import { showToast } from "src/hoc/withShowNotification";
 import { createEmployeeSchema } from "src/schemas/createEmployee.schemas";
@@ -27,14 +27,13 @@ const CreateEmployeeModal = ({ setIsShowModal, setEmployeeData }) => {
     },
   });
 
-const handleErrorField =(field)=>
- 
-errors[field] && touched[field] ? (<ErorrStyled>{ errors[field] }</ErorrStyled>) : null;
-;
+  const handleErrorField = (field) =>
+    errors[field] && touched[field] ? (
+      <ErorrStyled>{errors[field]}</ErorrStyled>
+    ) : null;
 
-  const { handleSubmit, handleChange, values, errors, touched } = formik;
-
-  console.log(errors, touched);
+  const { handleSubmit, handleChange, values, errors, touched, setFieldValue } =
+    formik;
 
   return (
     <CreateEmployeeModalStyled>
@@ -44,8 +43,15 @@ errors[field] && touched[field] ? (<ErorrStyled>{ errors[field] }</ErorrStyled>)
       </div>
 
       <form className="form" onSubmit={handleSubmit}>
-      
-        <SelectInput/>
+        <SelectInput
+          name="role"
+          setFieldValue={setFieldValue}
+          value={values.role}
+          onChange={handleChange}
+          className={errors["role"] && touched["role"] ? "error-field" : ""}
+        />
+        {handleErrorField("role")}
+
         <input
           type="text"
           name="fullName"
@@ -53,10 +59,12 @@ errors[field] && touched[field] ? (<ErorrStyled>{ errors[field] }</ErorrStyled>)
           autoComplete="off"
           onChange={handleChange}
           value={values.fullName}
-          className={errors['fullName'] && touched['fullName'] ? "error-field" :''}
+          className={
+            errors["fullName"] && touched["fullName"] ? "error-field" : ""
+          }
         />
 
-        {handleErrorField('fullName')}
+        {handleErrorField("fullName")}
         <input
           type="text"
           name="email"
@@ -64,9 +72,9 @@ errors[field] && touched[field] ? (<ErorrStyled>{ errors[field] }</ErorrStyled>)
           autoComplete="off"
           onChange={handleChange}
           value={values.email}
-          className={errors['email'] && touched['email'] ? "error-field" :''}
+          className={errors["email"] && touched["email"] ? "error-field" : ""}
         />
-        {handleErrorField('email')}
+        {handleErrorField("email")}
         <input
           type="text"
           name="address"
@@ -74,14 +82,16 @@ errors[field] && touched[field] ? (<ErorrStyled>{ errors[field] }</ErorrStyled>)
           autoComplete="off"
           onChange={handleChange}
           value={values.address}
-          className={errors['address'] && touched['address'] ? "error-field" :''}
+          className={
+            errors["address"] && touched["address"] ? "error-field" : ""
+          }
         />
-        {handleErrorField('address')}
+        {handleErrorField("address")}
         <input
           type="text"
           name="avatarSrc"
           placeholder="Avatar URL"
-          autoComplete="off"  
+          autoComplete="off"
           onChange={handleChange}
           value={values.avatarSrc}
         />

@@ -5,40 +5,34 @@ import EmployeesList from "../EmployeesList";
 import { useEffect, useState } from "react";
 import { getEmployeesList } from "src/api/employees";
 
-
-
-
-
 const ManagermentEmployees = () => {
-    
-    const [ employeeData,setEmployeeData] = useState ([]);
-    const [clickCount,SetClickCount] = useState(0);
-  
-  useEffect(()=>{
-    getEmployeesList().then((employeeData)=>setEmployeeData(employeeData));
-  
-  },[clickCount]);
-    
-    const customStyles = {
-          textAlign: "center",
-      };
-  
+  const [employeeData, setEmployeeData] = useState([]);
+  const [clickCount, SetClickCount] = useState(0);
 
-    return(
-        <ManagermentEmployeesStyled>
+  useEffect(() => {
+    getEmployeesList().then((employeeData) => setEmployeeData(employeeData));
+  }, [clickCount]);
 
-        
-            <Title content = "Data Center of employee" customStyles = {customStyles}/>
+  const customStyles = {
+    textAlign: "center",
+  };
 
-            <div className="action-bar">
-                <CreateEmployeeButton btnText="+ New Employee " setEmployeeData= {setEmployeeData}/>    
-            </div>
+  return (
+    <ManagermentEmployeesStyled>
+      <Title content="Data Center of employee" customStyles={customStyles} />
 
-            <EmployeesList employeeData= {employeeData} setEmployeeData= {setEmployeeData}/>
-    
-        </ManagermentEmployeesStyled>
-    )
-}
+      <div className="action-bar">
+        <CreateEmployeeButton
+          btnText="+ New Employee "
+          setEmployeeData={setEmployeeData}
+        />
+      </div>
+
+      <EmployeesList
+        employeeData={employeeData}
+        setEmployeeData={setEmployeeData}
+      />
+    </ManagermentEmployeesStyled>
+  );
+};
 export default ManagermentEmployees;
-
-

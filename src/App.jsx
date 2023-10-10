@@ -1,24 +1,13 @@
-
-
 import ManagermentEmployees from "./component/ManagermentEmployee/index";
-import { ToastContainer} from 'react-toastify';
-
+import { ToastContainer } from "react-toastify";
 
 function App() {
-
-  
-    
- 
-
-
   return (
     <>
       <ManagermentEmployees />
-      <ToastContainer/>
-      </>
-
-
-  )
+      <ToastContainer />
+    </>
+  );
 }
 
-export default App
+export default App;

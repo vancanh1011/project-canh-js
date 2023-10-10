@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import CreateEmployeeModal from "../CreateEmployeeModal";
 import { styled } from "styled-components";
 
-const CreateEmployeeButton = ({ btnText,setEmployeeData }) => {
+const CreateEmployeeButton = ({ btnText, setEmployeeData }) => {
   const [isShowModal, setIsShowModal] = useState(false);
 
   const handleclick = () => {
@@ -18,7 +18,10 @@ const CreateEmployeeButton = ({ btnText,setEmployeeData }) => {
       {isShowModal &&
         createPortal(
           <DivStyled className="blur">
-            <CreateEmployeeModal setIsShowModal={setIsShowModal} setEmployeeData = {setEmployeeData} />
+            <CreateEmployeeModal
+              setIsShowModal={setIsShowModal}
+              setEmployeeData={setEmployeeData}
+            />
           </DivStyled>,
           document.body
         )}
@@ -30,8 +33,8 @@ export default CreateEmployeeButton;
 const DivStyled = styled.div`
   background-color: #00000078;
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-`
+`;

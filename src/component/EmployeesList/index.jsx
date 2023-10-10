@@ -13,7 +13,6 @@ const EmployeesList = ({ employeeData, setEmployeeData }) => {
               setEmployeeData={setEmployeeData}
             />
           ))}
-          
         </>
       ) : (
         <img
