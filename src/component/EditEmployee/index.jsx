@@ -8,7 +8,7 @@ import { ErorrStyled } from "../CreateEmployeeModal/style";
 import PropTypes from "prop-types";
 import SelectInput from "../SelectInput";
 
-const EditEmployee = ({ setIsShowButton, dataEdit, setEmployeeData, }) => {
+const EditEmployee = ({ setIsShowModal, dataEdit, setEmployeeData }) => {
 
   const { id, address, avatarSrc, email, fullName, role } = dataEdit[0];
   const [isSelecting, setIsSelecting] = useState(false);
@@ -25,9 +25,9 @@ const EditEmployee = ({ setIsShowButton, dataEdit, setEmployeeData, }) => {
     },
     validationSchema: createEmployeeSchema,
     onSubmit: async ({ id, ...data }) => {
-      const reponse = await updateEmployee(id, data);
-      setEmployeeData(reponse.data);
-      setIsShowButton(false);
+      const response = await updateEmployee(id, data);
+      setEmployeeData(response.data);
+      setIsShowModal(false);
     },
   });
   const {
@@ -42,7 +42,7 @@ const EditEmployee = ({ setIsShowButton, dataEdit, setEmployeeData, }) => {
   } = formik;
 
   const handleClickCancle = () => {
-    setIsShowButton(false);
+    setIsShowModal(false);
   };
   const handleClickErrorFiled = (field) => {
     return errors[field] && touched[field] ? (
@@ -70,29 +70,26 @@ const EditEmployee = ({ setIsShowButton, dataEdit, setEmployeeData, }) => {
         <Title content={" Edit Employee"} />
       </div>
       <form className="form" onSubmit={handleSubmit}>
-        <input
-          type="search"
-          name="role"
-          placeholder="Role*"
-          autoComplete="off"
-          onChange={handleChange}
-          value={values.role}
-          onBlur={handleBlurRoleField}
-          className={
-          errors["role"] && touched["role"] ? "error-field" : "role-filed"
-            
-          }
+      <input
+          name="role"    
           readOnly
+          placeholder="Role*"
+          value={values.role}
+          onChange={handleChange}
+          onBlur={handleBlurRoleField}
+          className={errors["role"] && touched["role"] ? "error-field" : "role-field"}
           onClick={handleClickRoleField}
-        />{isShowDropdown && (
-            <SelectInput
-              setIsSelecting = {setIsSelecting}
-              setFieldValue= {setFieldValue}
-              setIsShowDropdown ={setIsShowDropdown}
-              name="role"
-            />
+        />
+        {handleClickErrorFiled("role")}
+        {isShowDropdown && (
+          <SelectInput
+          setFieldValue={setFieldValue}
+          setIsShowDropdown={setIsShowDropdown}
+          setIsSelecting={setIsSelecting}
+          name="role"
+
+          />
         )}
-          {handleClickErrorFiled("role")}
 
 
         <input
@@ -141,7 +138,7 @@ const EditEmployee = ({ setIsShowButton, dataEdit, setEmployeeData, }) => {
         />
       </form>
       <div className="action-button">
-        <button>Edit</button>
+        <button type ="submit">Edit</button>
         <button onClick={handleClickCancle}>Cancel</button>
       </div>
     </EditEmployeeStyled>

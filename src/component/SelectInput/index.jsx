@@ -2,20 +2,13 @@ import { useState } from "react";
 import SelectInputStyled from "./styles";
 import { SELECT_INPUT_DATA } from "src/data/SelectInputData";
 
-const SelectInput = ({ className, name, value, onChange, setFieldValue, }) => {
-  const [isShowDropdown, setIsShowDropdown] = useState(false);
-  const [isSelecting, setIsSelecting] = useState(false);
-  const handleClick = () => {
-    setIsShowDropdown(!isShowDropdown);
-  };
-  const handleBlur = () => {
-    if (!isSelecting) {
-      setIsShowDropdown(false);
-      setIsSelecting(false);
-    }
-  };
+const SelectInput = ({ setIsSelecting, setFieldValue,setIsShowDropdown,name }) => {
+
   const handleSelect = (value) => {
     setFieldValue(name, value);
+    setIsShowDropdown(false)
+    setIsSelecting(false)
+
   };
   const onMouseOver = () => {
     setIsSelecting(true);
@@ -25,17 +18,7 @@ const SelectInput = ({ className, name, value, onChange, setFieldValue, }) => {
   };
 
   return (
-    <SelectInputStyled onClick={handleClick}>
-      <input
-        readOnly
-        placeholder="Role*"
-        name="role"
-        onBlur={handleBlur}
-        className={className}
-        value={value}
-        onChange={onChange}
-      />
-      {isShowDropdown && (
+    <SelectInputStyled> 
         <div className="data-dropdown">
           {SELECT_INPUT_DATA.map(({ key, value }) => (
             <div
@@ -49,7 +32,6 @@ const SelectInput = ({ className, name, value, onChange, setFieldValue, }) => {
             </div>
           ))}
         </div>
-      )}
     </SelectInputStyled>
   );
 };

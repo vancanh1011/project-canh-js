@@ -8,7 +8,7 @@ export const getEmployeesList = async () => {
 };
 
 export const createNewEmployee = async (data) => {
-  const response = await request.post(ENTITY, { ...data });
+  const response = await request.post(ENTITY, data );
   const updatedResponse = await getEmployeesList();
   response.data = updatedResponse;
   return response;

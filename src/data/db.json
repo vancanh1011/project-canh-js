@@ -1,15 +1,6 @@
 {
   "employees": [
     {
-      "id": "3",
-      "fullName": "Hyori Matamatshu",
-      "email": "thien.pham@dev.com",
-      "address": "Japan",
-      "role": "Backend Developer",
-      "avatarSrc": "https://tuiriviu.com/wp-content/uploads/2023/08/MIKAMI-YUA-ROI-NUOC-MAT-TRONG-NGAY-GIA-TU-SU.jpg",
-      "isOnline": false
-    },
-    {
       "id": "5",
       "fullName": "Naphat Nine",
       "email": "napaht.9@yahoo.com",
@@ -17,15 +8,6 @@
       "role": "Quality Assurance",
       "avatarSrc": "https://image-us.eva.vn/upload/3-2020/images/2020-07-28/nine-naphat-hoang-tu-lai-noi-khap-chau-a-la-con-trai-ngoan-cua-ba-me-a-hau-5-1595952088-822-width600height459.jpg",
       "isOnline": true
-    },
-    {
-      "id": "6",
-      "fullName": "Min ZhaoLong",
-      "email": "min.long@dev.com",
-      "address": "China",
-      "role": "Quality Assurance",
-      "avatarSrc": "https://i.bloganchoi.com/bloganchoi.com/wp-content/uploads/2021/09/hinh-anh-baifern-pimchanok-696x870.jpg?fit=700%2C20000&quality=95&ssl=1",
-      "isOnline": false
     },
     {
       "id": "7",
@@ -119,14 +101,6 @@
       "address": "DaNang",
       "avatarSrc": "https://scontent.fdad1-2.fna.fbcdn.net/v/t39.30808-6/299995633_1908867142790751_6024946289024000943_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a8CNr7-0PT8AX99Wt8e&_nc_ht=scontent.fdad1-2.fna&oh=00_AfAUBAKsU5VUgzWeSw3uPFjm4I_qkPlYUn2p0CqT2EnVew&oe=652E9FE1",
       "id": "HZulH0u"
-    },
-    {
-      "role": "Quality Assurance",
-      "fullName": "Chi Chi",
-      "email": "chichi@yahoo.com",
-      "address": "japan",
-      "avatarSrc": "https://images6.fanpop.com/image/photos/34700000/Timid-Chi-Chi-dragon-ball-females-34765219-655-480.png",
-      "id": "wDe1UZV"
     }
   ]
 }

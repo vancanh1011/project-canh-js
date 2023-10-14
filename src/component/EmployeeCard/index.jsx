@@ -2,22 +2,21 @@ import { useState } from "react";
 import EmployeeCardStyled from "./style";
 import { AiFillEdit } from "react-icons/ai";
 import { BiTrash } from "react-icons/bi";
-import { toast } from "react-toastify";
-import { deleteEmployee, getEmployeesList } from "src/api/employees";
-import { showToast } from "src/hoc/withShowNotification";
+import { getEmployeesList } from "src/api/employees";
 import { createPortal } from "react-dom";
 import EditEmployee from "../EditEmployee";
-import { styled } from "styled-components";
 import PropTypes from "prop-types"
 import Online from "../Online";
-
+import CheckDeleteEmployee from "../CheckDeleteEmployee";
 
 const EmployeeCard = ({ data, setEmployeeData, employeeData}) => {
   const { id, address, avatarSrc, email, fullName, role, isOnline } = data;
 
-  const [isShowButton, setIsShowButton] = useState(false);
+  const [isShowModal, setIsShowModal] = useState(false);
 
-  const [dataEdit, setDataEdit]=useState([]);
+  const [dataEdit, setDataEdit]=useState([]); 
+
+  const [isShowCheckDeleteEmployee,setIsShowCheckDeleteEmployee] = useState(false) ;
   
   const [employeeId,setEmployeeId]=useState(0)
 
@@ -26,15 +25,15 @@ const EmployeeCard = ({ data, setEmployeeData, employeeData}) => {
   const handleUpdateEmployee = async (id) => {
     const response = await getEmployeesList();
     const dataEdit = response.filter((employee) => employee.id === id)
-    setIsShowButton(true);
+    setIsShowModal(true);
     setDataEdit(dataEdit);
     
   };
 
   const handleDeleteEmployee = async (id) => {
-    const response = await deleteEmployee(id);
-    setEmployeeData(response.data);
-    showToast("Delete employee suscessfully !");
+    setIsShowCheckDeleteEmployee(true)
+    setEmployeeId(id)
+
   };
 
   return (
@@ -57,26 +56,33 @@ const EmployeeCard = ({ data, setEmployeeData, employeeData}) => {
           onClick={()=>handleUpdateEmployee(id)}>
           <AiFillEdit />
         </button>
-        {isShowButton &&
-          createPortal(
-           
+        {isShowModal &&
+          createPortal(          
               <EditEmployee 
-
-              setIsShowButton = {setIsShowButton}
+              setIsShowModal = {setIsShowModal}
               dataEdit = {dataEdit}
               setEmployeeData = {setEmployeeData}
-
               />
             ,
             document.body
           )}
 
         <button
-          className="action-button"
-          onClick={() => handleDeleteEmployee(id)}
+            className="action-button"
+            onClick={() => handleDeleteEmployee(id)}
         >
           <BiTrash />
-        </button>
+        </button >
+        {isShowCheckDeleteEmployee && createPortal(
+          <CheckDeleteEmployee
+          setIsShowCheckDeleteEmployee ={setIsShowCheckDeleteEmployee}
+          employeeId={employeeId}
+          setEmployeeData ={setEmployeeData}
+          employeeData={employeeData}
+          />,
+          document.body,
+        )}
+        
       </section>
     </EmployeeCardStyled>
   );

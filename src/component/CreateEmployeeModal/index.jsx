@@ -5,8 +5,12 @@ import { createNewEmployee } from "src/api/employees";
 import { showToast } from "src/hoc/withShowNotification";
 import { createEmployeeSchema } from "src/schemas/createEmployee.schemas";
 import SelectInput from "../SelectInput";
+import { useState } from "react";
 
 const CreateEmployeeModal = ({ setIsShowModal, setEmployeeData }) => {
+  const [isShowDropdown,setIsShowDropdown] = useState(false)
+  const [isSelecting,setIsSelecting] = useState(false)
+
   const formik = useFormik({
     initialValues: {
       role: "",
@@ -27,13 +31,28 @@ const CreateEmployeeModal = ({ setIsShowModal, setEmployeeData }) => {
     },
   });
 
+  
+
+  const { handleSubmit, handleChange, values, errors, touched, setFieldValue } =
+    formik;
+
+
   const handleErrorField = (field) =>
     errors[field] && touched[field] ? (
       <ErorrStyled>{errors[field]}</ErorrStyled>
     ) : null;
 
-  const { handleSubmit, handleChange, values, errors, touched, setFieldValue } =
-    formik;
+  const handleClickRoleField = () => {
+      setIsShowDropdown(!isShowDropdown)
+  };
+
+  const handleBlurRoleField = (event)=>{
+    event.prevntDefault();
+    if (isSelecting === false){
+      setIsShowDropdown(false)
+    }
+  }
+
 
   return (
     <CreateEmployeeModalStyled>
@@ -43,14 +62,26 @@ const CreateEmployeeModal = ({ setIsShowModal, setEmployeeData }) => {
       </div>
 
       <form className="form" onSubmit={handleSubmit}>
-        <SelectInput
-          name="role"
-          setFieldValue={setFieldValue}
+        <input
+          name="role"    
+          readOnly
+          placeholder="Role*"
           value={values.role}
           onChange={handleChange}
-          className={errors["role"] && touched["role"] ? "error-field" : ""}
+          onBlur={handleBlurRoleField}
+          className={errors["role"] && touched["role"] ? "error-field" : "role-field"}
+          onClick={handleClickRoleField}
         />
         {handleErrorField("role")}
+        {isShowDropdown && (
+          <SelectInput
+          setFieldValue={setFieldValue}
+          setIsShowDropdown={setIsShowDropdown}
+          setIsSelecting={setIsSelecting}
+          name="role"
+
+          />
+        )}
 
         <input
           type="text"
