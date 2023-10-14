@@ -35,4 +35,5 @@ const ManagermentEmployees = () => {
     </ManagermentEmployeesStyled>
   );
 };
+
 export default ManagermentEmployees;

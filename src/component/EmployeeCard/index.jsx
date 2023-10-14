@@ -3,41 +3,44 @@ import EmployeeCardStyled from "./style";
 import { AiFillEdit } from "react-icons/ai";
 import { BiTrash } from "react-icons/bi";
 import { toast } from "react-toastify";
-import { deleteEmployee} from "src/api/employees";
+import { deleteEmployee, getEmployeesList } from "src/api/employees";
 import { showToast } from "src/hoc/withShowNotification";
 import { createPortal } from "react-dom";
 import EditEmployee from "../EditEmployee";
 import { styled } from "styled-components";
-
-const EmployeeCard = ({ data, setEmployeeData }) => {
-  const { id, address, avatarSrc, email, fullName, isOnline, role } = data;
-
+import PropTypes from "prop-types"
+import Online from "../Online";
 
 
+const EmployeeCard = ({ data, setEmployeeData, employeeData}) => {
+  const { id, address, avatarSrc, email, fullName, role, isOnline } = data;
 
   const [isShowButton, setIsShowButton] = useState(false);
 
+  const [dataEdit, setDataEdit]=useState([]);
+  
+  const [employeeId,setEmployeeId]=useState(0)
 
-  const handleUpdateEmployee = async() => {
-    
+  
+
+  const handleUpdateEmployee = async (id) => {
+    const response = await getEmployeesList();
+    const dataEdit = response.filter((employee) => employee.id === id)
     setIsShowButton(true);
+    setDataEdit(dataEdit);
     
   };
-
-
-
-
-
 
   const handleDeleteEmployee = async (id) => {
     const response = await deleteEmployee(id);
     setEmployeeData(response.data);
-    showToast( "Delete employee suscessfully !")
+    showToast("Delete employee suscessfully !");
   };
-
 
   return (
     <EmployeeCardStyled>
+
+      {isOnline === true ? <Online/> : <p></p>}
       <div className="main-container">
         <section className="employee-avatar">
           <img src={avatarSrc} alt="avatar.png" />
@@ -50,14 +53,23 @@ const EmployeeCard = ({ data, setEmployeeData }) => {
         </section>
       </div>
       <section className="employee-action">
-        <button className="action-button" onClick={handleUpdateEmployee}>
+        <button className="action-button" 
+          onClick={()=>handleUpdateEmployee(id)}>
           <AiFillEdit />
         </button>
-        {isShowButton && (createPortal(
-        <BlurStyled className="blur "><EditEmployee setIsShowButton ={setIsShowButton}/></BlurStyled>
-        ,
-        document.body))}
+        {isShowButton &&
+          createPortal(
+           
+              <EditEmployee 
 
+              setIsShowButton = {setIsShowButton}
+              dataEdit = {dataEdit}
+              setEmployeeData = {setEmployeeData}
+
+              />
+            ,
+            document.body
+          )}
 
         <button
           className="action-button"
@@ -70,13 +82,12 @@ const EmployeeCard = ({ data, setEmployeeData }) => {
   );
 };
 
-const BlurStyled = styled.div`
-  background-color: #00000078;
-  position: absolute;
-  top:0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-`
+EmployeeCard.propTypes ={
+  data : PropTypes.object,
+  setEmployeeData : PropTypes.func,
+  employeeData : PropTypes.array
+};
 
-export default EmployeeCard;    
+
+
+export default EmployeeCard;

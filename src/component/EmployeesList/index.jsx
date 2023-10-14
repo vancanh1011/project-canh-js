@@ -1,7 +1,8 @@
 import EmployeesListStyled from "./styles";
 import EmployeeCard from "../EmployeeCard";
+import PropTypes from "prop-types"
 
-const EmployeesList = ({ employeeData, setEmployeeData }) => {
+const EmployeesList = ({ employeeData, setEmployeeData, }) => {
   return (
     <EmployeesListStyled className="card-container">
       {employeeData.length ? (
@@ -11,6 +12,7 @@ const EmployeesList = ({ employeeData, setEmployeeData }) => {
               key={employee.id}
               data={employee}
               setEmployeeData={setEmployeeData}
+              employeeData={employeeData}
             />
           ))}
         </>
@@ -24,4 +26,8 @@ const EmployeesList = ({ employeeData, setEmployeeData }) => {
   );
 };
 
+EmployeesList.propTypes ={
+  employeeData: PropTypes.array,
+  setEmployeeData: PropTypes.func
+}
 export default EmployeesList;

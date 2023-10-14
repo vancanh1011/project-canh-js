@@ -1,39 +1,12 @@
 {
   "employees": [
     {
-      "id": "1",
-      "fullName": "Thien Pham",
-      "email": "thien.pham@fe-dev.com",
-      "address": "Danang",
-      "role": "Frontend Developer",
-      "avatarSrc": "https://media4.giphy.com/media/3lvqNXheb679S/giphy.gif",
-      "isOnline": true
-    },
-    {
-      "id": "2",
-      "fullName": "Lian Fuen",
-      "email": "tian.toktok@yahoo.com",
-      "address": "Hochiminh",
-      "role": "Quality Assurance",
-      "avatarSrc": "https://duhocsunny.edu.vn/wp-content/uploads/2023/02/Gai-xinh-Han-Quoc-Ji-Seong.jpg",
-      "isOnline": true
-    },
-    {
       "id": "3",
       "fullName": "Hyori Matamatshu",
       "email": "thien.pham@dev.com",
       "address": "Japan",
       "role": "Backend Developer",
       "avatarSrc": "https://tuiriviu.com/wp-content/uploads/2023/08/MIKAMI-YUA-ROI-NUOC-MAT-TRONG-NGAY-GIA-TU-SU.jpg",
-      "isOnline": false
-    },
-    {
-      "id": "4",
-      "fullName": "Sapanachap Khunme",
-      "email": "thien.pham@dev.com",
-      "address": "Thailand",
-      "role": "Full-stack Developer",
-      "avatarSrc": "https://img.freepik.com/premium-photo/thai-girl-traditional-thai-costume-identity-culture-thailand_41204-781.jpg?w=2000",
       "isOnline": false
     },
     {
@@ -82,15 +55,6 @@
       "isOnline": true
     },
     {
-      "id": "10",
-      "fullName": "Duke Fuke",
-      "email": "duke.fuke@yahoo.com",
-      "address": "Quangnam",
-      "role": "Frontend Developer",
-      "avatarSrc": "https://photo-zmp3.zmdcdn.me/avatars/4/b/7/b/4b7ba1fea4308c8822f00148bc4275c4.jpg",
-      "isOnline": true
-    },
-    {
       "id": "11",
       "fullName": "Elon Mussk",
       "email": "sau.ly@yahoo.com",
@@ -109,15 +73,6 @@
       "isOnline": true
     },
     {
-      "id": "13",
-      "fullName": "Tok Tian",
-      "email": "tian.toktok@yahoo.com",
-      "address": "HoChiMinh City",
-      "role": "Quality Assurance",
-      "avatarSrc": "https://image.tienphong.vn/600x315/Uploaded/2023/ofh-ngutgazs/2021_12_27/tt-ava-361.png",
-      "isOnline": true
-    },
-    {
       "id": "IT-6203654344",
       "fullName": "Jaejoong",
       "email": "be@gmail.com",
@@ -132,6 +87,46 @@
       "address": "Kanga",
       "role": "Full-stack Developer",
       "avatarSrc": "https://static.tuoitre.vn/tto/i/s626/2016/07/05/wall-e-cubecolors-1467709252.jpg"
+    },
+    {
+      "role": "Tester",
+      "fullName": "Songo Ku",
+      "email": "goku@yahoo.com",
+      "address": "Ha Noi",
+      "avatarSrc": "https://bizweb.dktcdn.net/100/418/981/products/z4291490157387-beff37280314e80ec804fac471265417-1-1682393439372.jpg?v=1682393442240",
+      "id": "LvtvwM2"
+    },
+    {
+      "role": "Tester",
+      "fullName": "VegeTa",
+      "email": "vegeta@yahoo.com",
+      "address": "Ho Chi Minh",
+      "avatarSrc": "https://facts.net/wp-content/uploads/2023/08/21-facts-about-vegeta-dragon-ball-z-1693477605.jpg",
+      "id": "zwUfZgC"
+    },
+    {
+      "role": "Frontend Developer",
+      "fullName": "Tran Van Canh",
+      "email": "vancanh101194@gmail.com",
+      "address": "DaNang",
+      "avatarSrc": "https://scontent.fdad1-3.fna.fbcdn.net/v/t1.18169-9/17903728_419130818446973_2536817617415765671_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0bb214&_nc_ohc=itdbRN2xsZYAX8L5f2X&_nc_oc=AQkIiRLh8Fv0Xd3e9sj2cPPeVnxCV716OM5j2W1BDxuJnR5UG8gQvnZWIko1b9iE91ogWFZN7gw8GmRDz4RsAjh0&_nc_ht=scontent.fdad1-3.fna&oh=00_AfDafNVH600ivqnsEgI1PkL1aNpPZdCdNni2iEGnyEH5RQ&oe=65510C84",
+      "id": "R_JXltm"
+    },
+    {
+      "role": "Tester",
+      "fullName": "Minh Quang",
+      "email": "quangtran@yahoo.com",
+      "address": "DaNang",
+      "avatarSrc": "https://scontent.fdad1-2.fna.fbcdn.net/v/t39.30808-6/299995633_1908867142790751_6024946289024000943_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=a8CNr7-0PT8AX99Wt8e&_nc_ht=scontent.fdad1-2.fna&oh=00_AfAUBAKsU5VUgzWeSw3uPFjm4I_qkPlYUn2p0CqT2EnVew&oe=652E9FE1",
+      "id": "HZulH0u"
+    },
+    {
+      "role": "Quality Assurance",
+      "fullName": "Chi Chi",
+      "email": "chichi@yahoo.com",
+      "address": "japan",
+      "avatarSrc": "https://images6.fanpop.com/image/photos/34700000/Timid-Chi-Chi-dragon-ball-females-34765219-655-480.png",
+      "id": "wDe1UZV"
     }
   ]
 }

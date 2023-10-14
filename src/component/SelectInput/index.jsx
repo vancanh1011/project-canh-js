@@ -2,7 +2,7 @@ import { useState } from "react";
 import SelectInputStyled from "./styles";
 import { SELECT_INPUT_DATA } from "src/data/SelectInputData";
 
-const SelectInput = ({ className, name, value, onChange, setFieldValue }) => {
+const SelectInput = ({ className, name, value, onChange, setFieldValue, }) => {
   const [isShowDropdown, setIsShowDropdown] = useState(false);
   const [isSelecting, setIsSelecting] = useState(false);
   const handleClick = () => {
@@ -55,6 +55,3 @@ const SelectInput = ({ className, name, value, onChange, setFieldValue }) => {
 };
 
 export default SelectInput;
-function setFieldValue(name, value) {
-  throw new Error("Function not implemented.");
-}

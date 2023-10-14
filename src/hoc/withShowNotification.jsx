@@ -10,7 +10,6 @@ const toastOptions = {
   theme: "light",
 };
 export const showToast = (message) => {
-  console.log("click");
   toast(message), toastOptions;
 };
 

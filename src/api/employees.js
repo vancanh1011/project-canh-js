@@ -17,9 +17,13 @@ export const createNewEmployee = async (data) => {
 export const deleteEmployee = async (employeeId) => {
   const response = await request.delete(`${ENTITY}/${employeeId} `);
   const updatedResponse = await getEmployeesList();
-  console.log(updatedResponse);
   response.data = updatedResponse;
   return response;
 };
 
-//const updateEmployee = async () ={}
+export const updateEmployee = async (employeeId, data) =>{
+  const response = await request.put(`${ENTITY}/${employeeId} `,data);
+  const updatedResponse = await getEmployeesList();
+  response.data = updatedResponse;
+  return response;
+};
