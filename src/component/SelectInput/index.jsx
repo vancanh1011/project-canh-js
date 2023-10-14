@@ -1,6 +1,6 @@
-import { useState } from "react";
 import SelectInputStyled from "./styles";
 import { SELECT_INPUT_DATA } from "src/data/SelectInputData";
+import PropTypes from "prop-types" 
 
 const SelectInput = ({ setIsSelecting, setFieldValue,setIsShowDropdown,name }) => {
 
@@ -35,5 +35,10 @@ const SelectInput = ({ setIsSelecting, setFieldValue,setIsShowDropdown,name }) =
     </SelectInputStyled>
   );
 };
-
+SelectInput.propTypes = {
+  setIsSelecting: PropTypes.func,
+  setFieldValue: PropTypes.func,
+  setIsShowDropdown: PropTypes.func,
+  name : PropTypes.string,
+}
 export default SelectInput;

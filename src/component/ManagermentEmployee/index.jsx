@@ -7,11 +7,10 @@ import { getEmployeesList } from "src/api/employees";
 
 const ManagermentEmployees = () => {
   const [employeeData, setEmployeeData] = useState([]);
-  const [clickCount, SetClickCount] = useState(0);
 
   useEffect(() => {
     getEmployeesList().then((employeeData) => setEmployeeData(employeeData));
-  }, [clickCount]);
+  }, []);
 
   const customStyles = {
     textAlign: "center",

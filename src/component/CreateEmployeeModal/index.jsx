@@ -6,6 +6,8 @@ import { showToast } from "src/hoc/withShowNotification";
 import { createEmployeeSchema } from "src/schemas/createEmployee.schemas";
 import SelectInput from "../SelectInput";
 import { useState } from "react";
+import PropTypes from "prop-types" 
+
 
 const CreateEmployeeModal = ({ setIsShowModal, setEmployeeData }) => {
   const [isShowDropdown,setIsShowDropdown] = useState(false)
@@ -134,5 +136,9 @@ const CreateEmployeeModal = ({ setIsShowModal, setEmployeeData }) => {
     </CreateEmployeeModalStyled>
   );
 };
+CreateEmployeeModal.propTypes = {
+  setIsShowModal: PropTypes.func,
+  setEmployeeData: PropTypes.func
 
+}
 export default CreateEmployeeModal;

@@ -9,6 +9,8 @@ left: 50%;
 transform: translate(-50%, -50%);
 padding: 15px 30px;
 z-index: 2;
+color: red;
+background:#82ddad;
 & > p {
   margin-top: 15px;
 }
@@ -20,32 +22,35 @@ z-index: 2;
   border-radius: 12px;
 }
 .action-buttons {
-  margin-top: 15px;
-  display: flex;
-  justify-content: flex-end;
-  & > button {
-    padding: 7px 15px;
-    border-radius: 8px;
-    border: none;
-    &:hover {
-      cursor: pointer;
-      transform: scale(0.9);
-      transition: all 0.3s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px;
+
+    & > button {
+      border: none;
+      outline: none;
+      padding: 10px 15px;
+      box-shadow: 1px 1px 10px gray;
+      border-radius: 12px;
+      margin-top: 30px;
+      transition: all 0, 3s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(0.9);
+      }
+    }
+    & > button:first-child {
+      background-color: #00b894;
+      color: white;
+    }
+    & > button:last-child {
+      margin-left: 15px;
+      background-color: red;
+      color: white;
     }
   }
-  & > button:first-child {
-    background: #ff6666;
-    color: white;
-    &:hover {
-      box-shadow: 5px 5px 7px #ff6666ad;
-    }
-  }
-  & > button:last-child {
-    margin-left: 10px;
-    &:hover {
-      box-shadow: 5px 5px 7px #8080808c;
-    }
-  }
-}`
+`
 
 export default CheckDeleteEmployeeStyled ;

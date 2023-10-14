@@ -7,6 +7,7 @@ import { updateEmployee } from "src/api/employees";
 import { ErorrStyled } from "../CreateEmployeeModal/style";
 import PropTypes from "prop-types";
 import SelectInput from "../SelectInput";
+import { showToast } from "src/hoc/withShowNotification";
 
 const EditEmployee = ({ setIsShowModal, dataEdit, setEmployeeData }) => {
 
@@ -25,9 +26,11 @@ const EditEmployee = ({ setIsShowModal, dataEdit, setEmployeeData }) => {
     },
     validationSchema: createEmployeeSchema,
     onSubmit: async ({ id, ...data }) => {
+      console.log("edit")
       const response = await updateEmployee(id, data);
       setEmployeeData(response.data);
       setIsShowModal(false);
+      showToast("Update data successfully!!!")
     },
   });
   const {
@@ -136,16 +139,17 @@ const EditEmployee = ({ setIsShowModal, dataEdit, setEmployeeData }) => {
           onBlur={handleBlur}
           value={values.avatarSrc}  
         />
-      </form>
-      <div className="action-button">
+        <div className="action-button">
         <button type ="submit">Edit</button>
         <button onClick={handleClickCancle}>Cancel</button>
       </div>
+      </form>
+
     </EditEmployeeStyled>
   );
 };
-EditEmployee.prototype = {
-  setIsShowButton: PropTypes.func,
+EditEmployee.propTypes = {
+  setIsShowModal: PropTypes.func,
   dataEdit: PropTypes.array,
   setEmployeeData: PropTypes.func,
 };

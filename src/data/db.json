@@ -1,13 +1,12 @@
 {
   "employees": [
     {
-      "id": "5",
+      "role": "Frontend Developer",
       "fullName": "Naphat Nine",
       "email": "napaht.9@yahoo.com",
       "address": "Thailand",
-      "role": "Quality Assurance",
       "avatarSrc": "https://image-us.eva.vn/upload/3-2020/images/2020-07-28/nine-naphat-hoang-tu-lai-noi-khap-chau-a-la-con-trai-ngoan-cua-ba-me-a-hau-5-1595952088-822-width600height459.jpg",
-      "isOnline": true
+      "id": "5"
     },
     {
       "id": "7",
@@ -72,7 +71,7 @@
     },
     {
       "role": "Tester",
-      "fullName": "Songo Ku",
+      "fullName": "Songo Kuku",
       "email": "goku@yahoo.com",
       "address": "Ha Noi",
       "avatarSrc": "https://bizweb.dktcdn.net/100/418/981/products/z4291490157387-beff37280314e80ec804fac471265417-1-1682393439372.jpg?v=1682393442240",

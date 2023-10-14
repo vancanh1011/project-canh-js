@@ -3,6 +3,7 @@ import CreateEmployeeButtonStyled from "./style";
 import { createPortal } from "react-dom";
 import CreateEmployeeModal from "../CreateEmployeeModal";
 import { styled } from "styled-components";
+import PropTypes from "prop-types" 
 
 const CreateEmployeeButton = ({ btnText, setEmployeeData }) => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -29,6 +30,10 @@ const CreateEmployeeButton = ({ btnText, setEmployeeData }) => {
   );
 };
 
+CreateEmployeeButton.propTypes ={
+  setEmployeeData: PropTypes.func,
+  btnText: PropTypes.string
+}
 export default CreateEmployeeButton;
 const DivStyled = styled.div`
   background-color: #00000078;

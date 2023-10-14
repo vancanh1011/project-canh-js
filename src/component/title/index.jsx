@@ -1,4 +1,5 @@
 import TitleStyled from "./styles";
+import PropTypes from "prop-types" 
 
 const Title = ({ content, customStyles }) => {
   return (
@@ -7,5 +8,8 @@ const Title = ({ content, customStyles }) => {
     </TitleStyled>
   );
 };
-
+Title.propTypes = {
+  content: PropTypes.string,
+  customStyles: PropTypes.object
+}
 export default Title;
